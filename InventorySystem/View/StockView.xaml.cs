@@ -13,23 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace InventorySystem
+namespace InventorySystem.View
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Interaction logic for StockView.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class StockView : UserControl
     {
-        public LoginPage()
+        public StockView()
         {
             InitializeComponent();
         }
-
-        
-        private void Button_Click_Login(object sender, RoutedEventArgs e)
-        {
-            
-        }
-        
     }
 }

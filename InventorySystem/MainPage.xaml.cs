@@ -25,17 +25,17 @@ namespace InventorySystem
         {
             InitializeComponent();
             
-            dgItems.ItemsSource = MainWindow.items;
+            //dgItems.ItemsSource = MainWindow.items;
         }
 
        
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var filtered = MainWindow.items.Where(items => items.Name.StartsWith(Search_Text_Items.Text));
+           // var filtered = MainWindow.items.Where(items => items.Name.StartsWith(Search_Text_Items.Text));
             //var filtered = items.Where(items => items.Name.StartsWith(Search_Text_Items.Text) || items.Id.ToString() == Search_Text_Items.Text);
 
-            dgItems.ItemsSource = filtered;
+            //dgItems.ItemsSource = filtered;
         }
     }
 }

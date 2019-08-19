@@ -4,9 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:InventorySystem"
+        xmlns:view="clr-namespace:InventorySystem.View"
+        xmlns:viewModel="clr-namespace:InventorySystem.ViewModel"
         mc:Ignorable="d"
         Title="InventorySystem" Height="450" Width="800" MinWidth="800" MinHeight="450" WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:LoginView x:Name = "LoginViewControl" Loaded = "LoginViewControl_Loaded"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:TabViewModel}">
+            <view:TabView x:Name = "TabViewControl" Loaded = "TabViewControl_Loaded"/>
+        </DataTemplate>
+        
+    </Window.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -16,22 +29,21 @@
 
         </Grid.ColumnDefinitions>
 
-        <DockPanel Grid.Row="0">
+        <Grid Grid.Row="0">
             <Menu DockPanel.Dock="Top">
                 <MenuItem Header="_File">
                     <MenuItem Header="_Logout"/>
                     <MenuItem Header="_Exit"/>
                 </MenuItem>
-                <!--<MenuItem Header="_Items">
+                <MenuItem Header="_Items">
                     <MenuItem Header="_New" Command="New"/>
                     <MenuItem Header="_Edit"/>
                     <MenuItem Header="_Del" Command="Delete"/>
-                </MenuItem>-->
+                </MenuItem>
             </Menu>
-        </DockPanel>
-
-        <Frame Grid.Row="1" x:Name="_mainFrame" NavigationUIVisibility="Hidden"/>
-
+        </Grid>
+        
+        <ContentControl Content="{Binding Content}" Grid.Row="1"/>
+        
     </Grid>
-
 </Window>
